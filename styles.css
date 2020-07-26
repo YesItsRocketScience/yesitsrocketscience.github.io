@@ -192,10 +192,21 @@ article p {
 	display: block;
 	max-width: 100%;
 	margin: 20px auto 0 auto;
+	padding: 20px;
 }
 
 .content img.compact {
 	display: inline-block;
+}
+
+/* img */
+
+img {
+	display: block;
+	max-width: 100%;
+	margin: 20px auto 0 auto;
+	padding: 20px;
+	filter: drop-shadow(1px 1px 6px #5555);
 }
 
 
