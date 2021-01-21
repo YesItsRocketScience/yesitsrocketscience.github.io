@@ -51,23 +51,26 @@
                     Explanation of Scripts on Rocketsheet
                 </h2>
                 <p>
-                    There are two functions on the script editor, one that will create a new launch sheet and another that will save the launch data and paste it into the 'Launches' spreadsheet.
+                    There are two functions in the script editor, one that will create a new launch sheet and another that will save the launch data and paste it into the Launches sheet.
                 </p>
 
                 <img width="400" src="images/onEditMethod.png">
                 <img width="400" src="images/createLaunchMethod.png">
 
                 <p>
-                    The method onEdit(e) will first check to see if the sheet that was edited was the 'Home' sheet. If so, the method will check to see if the cell that was edited is the menu cell, or B7. If that is also true, the method will then set the value in the cell to the text "working..." and will call the method createLaunch(). The method createLaunch() sets up a new spreadsheet using the Launch Template and sets the date to the current day. Once the method createLaunch() is done, the script will go back to onEdit(e) and will clear the menu cell so that once again it is empty.
+                    The method onEdit(e) will first check to see if the sheet that was edited was the 'Home' sheet. If so, the method will then check if the cell that was edited is the menu cell, or B7. If that is also true, the method will then set the value in the cell to the text "working..." and will call the method createLaunch(). The method createLaunch() sets up a new spreadsheet using the Launch Template and sets the date to the current day. Once the method createLaunch() is done, the script will go back to onEdit(e) and will clear the menu cell so that once again it is empty.
                 </p>
                 <p>
                     <img width="400" src="images/saveLaunchDataMethod.png">
                 </p>
                 <p>
-                    However, if the spreadsheet edited was not the 'Home' spreadsheet, the script will instead check to see if the spreadsheet edited has a cell on F1 with the text "Menu". If true, the script will then call the saveLaunchData(sheet) method. saveLaunchData(sheet) uses the passed in sheet to insert a column into the 'Launches' spreadsheet, where it will then copy over the data that was inputed into the launch data sheet. The for loop will take all the member's names and put them into a comma separated list. 
+                    However, if the spreadsheet edited was not the Home sheet, the script will instead check to see if the sheet edited has a cell on F1 with the text "Menu". If true, the script will then call the saveLaunchData(sheet) method. saveLaunchData(sheet) uses the passed in sheet to insert a column into the Launches sheet, where it will then copy over the data that was inputed in the launch sheet into the Launches sheet. The for loop will take all the member's names and put them into a comma separated list.
                 </p>
+                <h2> 
+                    How to Edit the Script
+                </h2>
                 <p>
-                    If you want to add or remove the number of data entries in your Launch Template, do so on the Google spreadsheet, then go to your script editor and adjust the range that saveLaunchData(sheet) will copy to make the transfer of data from the individual launches to the 'Launches' spreadsheet accurate. More specifically, change the var sourceRange and destinationRange to get the correct range of data entries.
+                    If you want to add or remove the number of data entries in your Launch Template, do so on the Launch Template sheet, then click on "Script editor" under Tools in the menu bar and adjust the range that saveLaunchData(sheet) will copy. This is to make the transfer of data from the individual launch sheet to the Launches sheet accurate. More specifically, change the variables sourceRange and destinationRange to get the correct range of data entries.
                 </p>
                 
             </div>
